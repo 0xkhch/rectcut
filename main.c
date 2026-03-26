@@ -37,7 +37,6 @@ int main(void)
     Rect layout = { 0, 0, WIDTH, HEIGHT};
     // layout 800x360
     Rect dialog = cut_bottom(&layout, 240);
-    // printf("%f %f %f %f \n", dialog.min_x, dialog.min_y, dialog.min_x, dialog.max_y);
 
     InitAudioDevice();
     Wave song_1_wave = LoadWaveFromMemory(".mp3", background_mp3, background_mp3_len);
@@ -99,7 +98,6 @@ int main(void)
     while (!WindowShouldClose() && !end)
     {
         text_speed++;
-        printf("%d\n", text_speed);
         if (text_speed > 400 && dialog_state == 0) {
             text_speed = 0;
             dialog_state = 1;

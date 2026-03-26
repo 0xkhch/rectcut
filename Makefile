@@ -10,10 +10,10 @@ flags = -Wall -Wextra -ggdb
 all: build main windows
 
 windows:
-	${cc_win} $(src)  -Iraylib-5.5_win64_mingw-w64/include -Lraylib-5.5_win64_mingw-w64/lib -l:libraylib.a -lgdi32 -lwinmm -lm -Wl,--subsystem,windows -o ${name}
+	${cc_win} $(src)  -Iraylib-5.5_win64_mingw-w64/include -Iassets/ -Lraylib-5.5_win64_mingw-w64/lib -l:libraylib.a -lgdi32 -lwinmm -lm -Wl,--subsystem,windows -o ${name}
 
 main:
-	$(cc) $(src) -o $(name) $(flags) -I$(include) -L$(link) -l:libraylib.a -lm
+	$(cc) $(src) -o $(name) $(flags) -I$(include) -Iassets/ -L$(link) -l:libraylib.a -lm
 
 build:
 	mkdir build
