@@ -1,2 +1,6 @@
 build/
+.cache/
 *.json
+*.png
+*.mp3
+*.wav
